@@ -1,11 +1,23 @@
-document.getElementById('error-message').style.display = 'none';
+const searchBtn = document.getElementById("button-search");
+const searchInput = document.getElementById("search-field");
+
+searchInput.addEventListener("keypress", function (event) {
+    // event.preventDefault();
+    console.log('keypress triggered', event.key)
+    if (event.key == 'Enter') {
+        searchBtn.click();
+    }
+});
+
+
+// document.getElementById('error-message').style.display = 'none';
 
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     // clear data;
     searchField.value = '';
-    document.getElementById('error-message').style.display = 'none';
+    // document.getElementById('error-message').style.display = 'none';
 
     if (searchText == '') {
         // return 'Error: please write something error to display';
